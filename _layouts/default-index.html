@@ -13,15 +13,25 @@
         margin: 0 auto;
         padding: 45px;
     }
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    time {
+      float: right;
+    }
 </style>
 </head>
 <body>
 <article class="markdown-body">
 <h2>{{ page.title }}</h2>
 <ul>
-  {% for post in site.pages do %}
-    {% if post.date %}
-    <li>{{ post.date }} <a href="{{ post.url }}">{{ post.title }}</a></li>
+  {%- for post in site.pages do %}
+    {%- if post.date %}
+    <li>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>
+      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    </li>
     {% endif %}
   {% endfor %}
 </ul>
