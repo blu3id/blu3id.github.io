@@ -26,11 +26,11 @@
 <article class="markdown-body">
 <h2>{{ page.title }}</h2>
 <ul>
-  {% for post in site.pages do %}
-    {% if post.date %}
+  {% for page in site.pages do %}
+    {% if page.date %}
     <li>
       <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>
-      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
     </li>
     {% endif %}
   {% endfor %}
