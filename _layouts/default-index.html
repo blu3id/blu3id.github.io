@@ -20,9 +20,9 @@
 <h2>{{ page.title }}</h2>
 <ul>
   {% for post in site.pages do %}
-  <li>
-    {{ post.date }} <a href="{{ post.url }}">{{ post.title }}</a>
-  </li>
+    {% if post.data != "" %}
+    <li>{{ post.date }} <a href="{{ post.url }}">{{ post.title }}</a>/li>
+    {% endif %}
   {% endfor %}
 </ul>
 </article>
