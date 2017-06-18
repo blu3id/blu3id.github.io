@@ -143,7 +143,7 @@ As ever I welcome any feedback, comments, criticism or suggestions on what I hav
 
 ### Notes:
 
-<a name="notea">[a]</a>: Technical side note/rabbit hole for the curious: Airbus flight control law failure modes don't account for this failure - you can only enter Direct Law (no envelop protection) or Alternate Law 2 (no high AoA of high speed protection) if two ADIRU's fail not if there isn't parity across all three ADIRU (which also isn't/wasn't a cause to fail out an ADIRU).
+<a name="notea">[a]</a>: Technical side note/rabbit hole for the curious: Airbus flight control law failure modes don't account for this failure - you can only enter Direct Law (no envelop protection) or Alternate Law 2 (no high AoA or high speed protection) if two ADIRU's fail not if there isn't parity across all three ADIRU (which also isn't/wasn't a cause to fail out an ADIRU).
 
 <a name="noteb">[b]</a>: And no existing "Incident Reporting" systems such as DATIX are not the type of monitoring I am talking about - in the current climate (and for that matter culture of many organisations) in the NHS these systems record a metaphorical scraping of the tip of the iceberg. [Dr Gordon Cadwell](https://twitter.com/doctorcaldwell) has [tweeted](https://twitter.com/doctorcaldwell/status/876144163200393217) about some of the resons behind this. The type of monitoring that should be aspired to is something similar to the [Neuraxial Connector Surveillance](http://www.wales.nhs.uk/sites3/page.cfm?orgid=457&pid=72625) programme that is being run in Wales. There needs to be minimally (or ideally completely unobtrusive) baseline monitoring before deployment, during and after in order to pick up issues - again there could be a whole series of posts on the topic of effective monitoring.
 
@@ -152,7 +152,7 @@ As ever I welcome any feedback, comments, criticism or suggestions on what I hav
 
 ### References:
 
-<a name="Perrow1981">[1]</a>: Perrow, C., 1981. Normal accident at three mile island. Society, 18(5), pp.17–26.
+<a name="Perrow1981">[1]</a>: [Perrow, C., 1981. Normal accident at three mile island. Society, 18(5), pp.17–26.](http://dx.doi.org/10.1007/BF02701322)
 
 <a name="Villares2016">[2]</a>: [Villares, J.M.M., 2016. Allocation of physician time in ambulatory practice: A time and motion study in 4 specialties. Acta Pediatrica Espanola, 74(8), p.203.](http://dx.doi.org/10.7326/M16-0961)
 
