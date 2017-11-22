@@ -1,7 +1,7 @@
 ---
 layout: default-date
 title: "On infrastructure for verifiable auditable access to healthcare records"
-permalink: "/posts/auditable-records-access-infrastructure.html"
+permalink: "/posts/auditable-records-access-infrastructure"
 date: 2017-03-21
 ---
 

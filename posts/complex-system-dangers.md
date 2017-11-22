@@ -1,7 +1,7 @@
 ---
 layout: default-date
 title: "The unappreciated risks of IT deployment within Complex Systems"
-permalink: "/posts/complex-system-dangers.html"
+permalink: "/posts/complex-system-dangers"
 date: 2017-06-18
 ---
 
