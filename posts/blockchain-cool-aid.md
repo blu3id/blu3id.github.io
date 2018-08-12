@@ -9,7 +9,7 @@ date: 2018-08-11
 
 I have been driven to write this _rapid response_ post by the outpouring of support for a "Blockchain Based Solution" to the problem of electronic staff identity within the NHS that has been plaguing Twitter for the past 48 hours (see following thread). 
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">So the future is coming now - fab session today on the collaboration of NHS, vendors, medical directors and RAs on how we can use Blockchain for staff identity... <a href="https://twitter.com/hashtag/CCIO7">#CCIO7</a> <a href="https://twitter.com/NHSCCIO">@NHSCCIO</a> <a href="https://twitter.com/PhilipGrahamNHS">@PhilipGrahamNHS</a> <a href="https://twitter.com/SarahFWilkinson">@SarahFWilkinson</a> <a href="https://twitter.com/NHSDigital">@NHSDigital</a> <a href="https://t.co/YCVJcurW22">pic.twitter.com/YCVJcurW22</a></p>&mdash; indi singh (@mr_indisingh) <a href="https://twitter.com/mr_indisingh/status/1027639212173127680">August 9, 2018</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="en" data-align="center"><p lang="en" dir="ltr">So the future is coming now - fab session today on the collaboration of NHS, vendors, medical directors and RAs on how we can use Blockchain for staff identity... <a href="https://twitter.com/hashtag/CCIO7">#CCIO7</a> <a href="https://twitter.com/NHSCCIO">@NHSCCIO</a> <a href="https://twitter.com/PhilipGrahamNHS">@PhilipGrahamNHS</a> <a href="https://twitter.com/SarahFWilkinson">@SarahFWilkinson</a> <a href="https://twitter.com/NHSDigital">@NHSDigital</a> <a href="https://t.co/YCVJcurW22">pic.twitter.com/YCVJcurW22</a></p>&mdash; indi singh (@mr_indisingh) <a href="https://twitter.com/mr_indisingh/status/1027639212173127680">August 9, 2018</a></blockquote>
 
 
 ## What is a Blockchain/Distributed Ledger?
@@ -30,12 +30,12 @@ There are many, many, _many_ problems with technology and IT in the the NHS. But
 1. Staff Identity
 2. Staff Access to Systems
 
-<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">The hypothesis is to test whether Distributed Ledger Technology can improve the management of staff identity and link to system access... in particular the PoC is looking at Locums.... lots of opportunities.... <a href="https://twitter.com/hashtag/WatchThisSpace">#WatchThisSpace</a></p>&mdash; Philip Graham (@PhilipGrahamNHS) <a href="https://twitter.com/PhilipGrahamNHS/status/1027886273313341442">August 10, 2018</a></blockquote>
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en" data-align="center"><p lang="en" dir="ltr">The hypothesis is to test whether Distributed Ledger Technology can improve the management of staff identity and link to system access... in particular the PoC is looking at Locums.... lots of opportunities.... <a href="https://twitter.com/hashtag/WatchThisSpace">#WatchThisSpace</a></p>&mdash; Philip Graham (@PhilipGrahamNHS) <a href="https://twitter.com/PhilipGrahamNHS/status/1027886273313341442">August 10, 2018</a></blockquote>
 
 
 And as secondary goals per Simon Eccles and others:
 
-<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">No - not at all. The GMC ledger is vital but doesn’t confirm your ID. Nor does it prove you hold the postgrad quals and competencies you claim. A GMC no (or equivalent for other professions, and the no. sets overlap) doesn’t get you paid. Multiple ledgers - for all clinicians.</p>&mdash; Simon Eccles (@NHSCCIO) <a href="https://twitter.com/NHSCCIO/status/1027977904360173568">August 10, 2018</a></blockquote>
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en" data-align="center"><p lang="en" dir="ltr">No - not at all. The GMC ledger is vital but doesn’t confirm your ID. Nor does it prove you hold the postgrad quals and competencies you claim. A GMC no (or equivalent for other professions, and the no. sets overlap) doesn’t get you paid. Multiple ledgers - for all clinicians.</p>&mdash; Simon Eccles (@NHSCCIO) <a href="https://twitter.com/NHSCCIO/status/1027977904360173568">August 10, 2018</a></blockquote>
 
 
 3. Confirmation of Licence to Practice (GMC, NMC etc. Register Entry)
@@ -100,7 +100,7 @@ However for the above to become a reality work would need to be done by the vari
 Therefore effort would be better spent extending the role of the [Care Identity Service](https://digital.nhs.uk/services/registration-authorities-and-smartcards/care-identity-service) and ironing out some of the implementation issues to improve user experience and ease of use.
 
 
-<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">In conclusion: it should not be normal for NHS IT to be so bad. It&#39;s 2018. <br>Fix the basics and stop getting distracted by the latest fads. <a href="https://twitter.com/bengoldacre">@bengoldacre</a> <a href="https://twitter.com/MattHancock">@MattHancock</a></p>&mdash; Dan Sheldon (@sheldonline) <a href="https://twitter.com/sheldonline/status/1027825755936509952">August 10, 2018</a></blockquote>
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en" data-align="center"><p lang="en" dir="ltr">In conclusion: it should not be normal for NHS IT to be so bad. It&#39;s 2018. <br>Fix the basics and stop getting distracted by the latest fads. <a href="https://twitter.com/bengoldacre">@bengoldacre</a> <a href="https://twitter.com/MattHancock">@MattHancock</a></p>&mdash; Dan Sheldon (@sheldonline) <a href="https://twitter.com/sheldonline/status/1027825755936509952">August 10, 2018</a></blockquote>
 
 
 ### Conflict of Interest Statement
