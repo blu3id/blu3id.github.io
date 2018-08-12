@@ -76,15 +76,15 @@ Again much like the SmartCard it is important to caveat that while for the most 
 
 ## Conclusion
 
-So the original premise from Twitter (and no doubt actively being perused at significant cost both financially and in terms of time) was that the NHS needs to embrace Blockchain/Distributed ledger technology to "solve" the electronic staff identity and access problem.
+So the original premise from Twitter (and no doubt actively being perused at significant cost both financially and in terms of time) was that the NHS needs to trial Blockchain/Distributed ledger technology to see if it can "solve" the electronic staff identity and access problem better than existing (already deployed solutions).
 
-However what we have learnt is NHS England already has three different central authorities that could or do already provide a consistent electronic staff identity. That Blockchain technology is suited to enforcing trust (through an immutable record) across multiple thousands of systems that are inherently untrustworthy and have no pre-existing relationships (the exact opposite of NHs organisations).
+However what we have learnt is NHS England already has three different central authorities that could or do already provide a consistent electronic staff identity. That Blockchain technology is suited to enforcing trust (through an immutable record) across multiple thousands of systems that are inherently untrustworthy and have no pre-existing relationships (the exact opposite of NHS organisations).
 
-And that Wales has already "solved" the identity and access problem  (back in 2009) without the use of a Blockchain.
+And that NHS Wales has already "solved" the identity and access problem (back in 2009) without the use of a Blockchain.
 
 ### Where efforts should be focused:
 
-While it is true NHS England does have existing central authorities of staff identity unfortunately the [Care Identity Service](https://digital.nhs.uk/services/registration-authorities-and-smartcards/care-identity-service) doesn't provide for the [other problems]() listed out on twitter - and to be clear neither would a distributed ledger - and isn't quite set-up to act as a single combined identity/authentication service for the whole of NHS England... yet.
+While it is true NHS England does have existing central authoritative directories of electronic staff identity unfortunately the [Care Identity Service](https://digital.nhs.uk/services/registration-authorities-and-smartcards/care-identity-service) doesn't provide for the [other problems](#what-problems-are-we-solving) listed out on twitter (neither would a distributed ledger) and isn't quite set-up to act as a single combined identity/authentication service for the whole of NHS England... yet.
 
 Delegating Access to individual systems will always be a problem (one of the implementation issues in Wales) as regardless of technical solution employed Access to patient record will always need to be individually granted by organisations (local or regional) when employees join them.
 
