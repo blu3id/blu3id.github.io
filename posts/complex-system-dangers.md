@@ -19,7 +19,7 @@ _I should prefix this with a brief warning: I am not &mdash; and do not pretend 
 
 #### i. Normal Accidents and Complex Systems
 
-There is a naive view within the NHS (and other healthcare organisations around the world) that the introduction of IT systems will do among other things one or many of the following:
+There is a naïve view within the NHS (and other healthcare organisations around the world) that the introduction of IT systems will do among other things one or many of the following:
 
 1. Improve productivity & "patient flow".<sup>[2](#Villares2016), [3](#Jones2012)</sup> _"For every hour physicians provide direct clinical face time to patients, nearly 2 additional hours is spent on EHR"_
 2. Improve patient outcomes.<sup>[4](#Han2005)</sup> _"Mortality rate ... increased from 2.80% ... to 6.57% (36 of 548) after ... implementation"_
@@ -33,7 +33,7 @@ Unfortunately reality has a different set of options. There are a number of comp
 
 In modern medicine introduction of a new drug, treatment or procedure is highly scrutinised and evidence based. There are trials, audits and research studies that evaluate the effectiveness and safety of these changes. However when is comes to introduction of IT systems to the clinical environment there is no such scrutiny, there is no requirement for evidence, there is no on-going supervisions and reporting of adverse incidents.
 
-IT deployments are a change malmanagement process - at risk of veering off-topic - there is a vast amount of theory on how best to manage and implement change and yet within the NHS there is either wilful ignorance of this amongst IT staff/project managers or (perhaps more worryingly) a complete lack of understanding. The emphasis is always on the project or the software never on the "product" (providing safe, efficient healthcare) or the end users who deliver it (health care professionals) which is at odds with change management theories (such as Kotter, Lewin or McKinsey) that all focus on the users (health care professionals) and how the change will improve the product (providing safe, efficient healthcare).
+IT deployments are a change management process - at risk of veering off-topic - there is a vast amount of theory on how best to manage and implement change and yet within the NHS there is either wilful ignorance of this amongst IT staff/project managers or (perhaps more worryingly) a complete lack of understanding. The emphasis is always on the project or the software never on the "product" (providing safe, efficient healthcare) or the end users who deliver it (health care professionals) which is at odds with change management theories (such as Kotter, Lewin or McKinsey) that all focus on the users (health care professionals) and how the change will improve the product (providing safe, efficient healthcare).
 
 #### iii. Work as Imagined vs. Work as Done
 
@@ -60,7 +60,7 @@ The practice of modern healthcare within the NHS is a complex, tightly coupled a
 3. Learning organisation, learning and changing based following accidents, incidents and near-misses.
 4. Redundancy working beyond technology extending to behaviour.
 
-More recently there has been work on attempting to view NAT and HRT as complimentary rather than competitive.<sup>[12](#Shrivastava2009)</sup> This has focused on different temporal perspectives and how reframing that analysis of NAT within an open system can address the non-falsifiability of the theory.
+More recently there has been work on attempting to view NAT and HRT as complementary rather than competitive.<sup>[12](#Shrivastava2009)</sup> This has focused on different temporal perspectives and how reframing that analysis of NAT within an open system can address the non-falsifiability of the theory.
 
 Wikipedia does a fine job defining and describing [Complex Adaptive Systems](https://en.wikipedia.org/wiki/Complex_adaptive_system) as follows:
 
@@ -96,7 +96,7 @@ As they are unfamiliar with the online system and/or are tired they forget that 
 6. _Results reviewed, again._ There are still no results for the remaining electrolytes.  
 Remembering that the new results system displays status information the Junior Doctor opts to use this system to check on the status of the "add-on" test. As the ‘traditional’ method of ringing the laboratory and navigating a time consuming and patronising set of interactive voice prompts would be unproductive. The results viewing system to confirm that additional tests are "in-progress".
 7. _Patient missed arranged hospital transport slot._
-8. _Results reviewed, for the third time._ There are still no results for remaining electrolytes. The Junior Doctor decides to spend the time being on hold and navigating the IVR to contact the laboratory for an update. Perhaps there has been an equipment malfunction or emergency? After waiting to get though the laboratory staff report that the results should be available as they have already been released.
+8. _Results reviewed, for the third time._ There are still no results for remaining electrolytes. The Junior Doctor decides to spend the time being on hold and navigating the IVR to contact the laboratory for an update. Perhaps there has been an equipment malfunction or emergency? After waiting to get through the laboratory staff report that the results should be available as they have already been released.
 9. _Attempt to re-publish the results to the report system._ This fails. The results are verbally released.
 10. _Results reviewed._ The potassium has improved following the medication changes and the patient can be safely discharged.
 11. _Patient discharged._ Taken home by next available hospital transport.
