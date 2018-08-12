@@ -9,6 +9,7 @@ date: 2018-08-11
 
 I have been driven to write this _rapid response_ post by the outpouring of support for a "Blockchain Based Solution" to the problem of electronic staff identity within the NHS that has been plaguing Twitter for the past 48 hours (see following thread). 
 
+
 <blockquote class="twitter-tweet" data-lang="en" data-align="center"><p lang="en" dir="ltr">So the future is coming now - fab session today on the collaboration of NHS, vendors, medical directors and RAs on how we can use Blockchain for staff identity... <a href="https://twitter.com/hashtag/CCIO7">#CCIO7</a> <a href="https://twitter.com/NHSCCIO">@NHSCCIO</a> <a href="https://twitter.com/PhilipGrahamNHS">@PhilipGrahamNHS</a> <a href="https://twitter.com/SarahFWilkinson">@SarahFWilkinson</a> <a href="https://twitter.com/NHSDigital">@NHSDigital</a> <a href="https://t.co/YCVJcurW22">pic.twitter.com/YCVJcurW22</a></p>&mdash; indi singh (@mr_indisingh) <a href="https://twitter.com/mr_indisingh/status/1027639212173127680">August 9, 2018</a></blockquote>
 
 
@@ -30,17 +31,19 @@ There are many, many, _many_ problems with technology and IT in the the NHS. But
 1. Staff Identity
 2. Staff Access to Systems
 
+
 <blockquote class="twitter-tweet" data-conversation="none" data-lang="en" data-align="center"><p lang="en" dir="ltr">The hypothesis is to test whether Distributed Ledger Technology can improve the management of staff identity and link to system access... in particular the PoC is looking at Locums.... lots of opportunities.... <a href="https://twitter.com/hashtag/WatchThisSpace">#WatchThisSpace</a></p>&mdash; Philip Graham (@PhilipGrahamNHS) <a href="https://twitter.com/PhilipGrahamNHS/status/1027886273313341442">August 10, 2018</a></blockquote>
 
 
 And as secondary goals per Simon Eccles and others:
 
-<blockquote class="twitter-tweet" data-conversation="none" data-lang="en" data-align="center"><p lang="en" dir="ltr">No - not at all. The GMC ledger is vital but doesn’t confirm your ID. Nor does it prove you hold the postgrad quals and competencies you claim. A GMC no (or equivalent for other professions, and the no. sets overlap) doesn’t get you paid. Multiple ledgers - for all clinicians.</p>&mdash; Simon Eccles (@NHSCCIO) <a href="https://twitter.com/NHSCCIO/status/1027977904360173568">August 10, 2018</a></blockquote>
-
-
 3. Confirmation of Licence to Practice (GMC, NMC etc. Register Entry)
 4. Post-graduate qualifications (Passed membership exams of Royal Colleges)
 5. Occupational Health Records
+
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en" data-align="center"><p lang="en" dir="ltr">No - not at all. The GMC ledger is vital but doesn’t confirm your ID. Nor does it prove you hold the postgrad quals and competencies you claim. A GMC no (or equivalent for other professions, and the no. sets overlap) doesn’t get you paid. Multiple ledgers - for all clinicians.</p>&mdash; Simon Eccles (@NHSCCIO) <a href="https://twitter.com/NHSCCIO/status/1027977904360173568">August 10, 2018</a></blockquote>
+
 
 ## Where we are now / Historical context
 
@@ -64,7 +67,6 @@ NHSMail offers a secure email service for health and care users across England a
 ### ESR
 
 The [Electronic Staff Record](http://www.electronicstaffrecord.nhs.uk/home/) is an unwieldly monstrosity used across England and Wales to manage HR functions and other add-ons (e-learning and mandatory training). This is a single unified platform that tracks employees across their careers and through multiple organisations within the NHS. 
-
 
 ## What others are doing to "solve" these problems
 
@@ -105,7 +107,7 @@ Therefore effort would be better spent extending the role of the [Care Identity 
 
 ### Conflict of Interest Statement
 
-I work in the NHS and pay Tax in the UK. Therefore I have vested interest in: 1) money no being wasted on the latest technological fad 2) the rapid improvement of technology in the NHS.
+I work in the NHS and pay Tax in the UK. Therefore I have vested interest in: 1) money not being wasted on the latest technological fad 2) the rapid improvement of technology in the NHS.
 
 I welcome any feedback, comments, criticism or suggestions on what I have outlined. If you can explain the need for a novel, pointless, expensive and difficult technology to me I will happily update this post with more information as it become available.
 
