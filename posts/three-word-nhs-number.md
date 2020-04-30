@@ -7,7 +7,7 @@ date: 2020-04-30
 
 # Three Word NHS Number
 
-So occasionally you have a hairbrained idea and decided to produce a proof of concept. Let's back up a bit:
+So occasionally you have a hairbrained idea and decide to produce a proof of concept. Let's back up a bit:
 
 The year is 2002 and [Connecting for Health](https://en.wikipedia.org/wiki/NHS_Connecting_for_Health) (yes "that" £12.4bn white elephant that umbrellaed NPfIT) has just been established, the "new" format NHS Number has existed for 7 years (since 1995) but isn't seeing much use. There is a campaign to increase adoption and use of the NHS Number to help join-up and underpin the nascent infrastructure of the NPfIT. Fast forward to 2015 and the NHS Number is legally mandated to be used as a single patient identifier across health and care with the introduction of the [The Health and Social Care (Safety and Quality) Bill](https://www.digitalhealth.net/2015/10/nhs-number-use-becomes-law/). 
 
@@ -139,7 +139,8 @@ function wordsToNumber(words) {
         }
     });
 
-    number = parseInt(binaryString, 2);
+    number = parseInt(binaryString, 2) + '';
+    number = number.padStart(10, '0');
 
     if (!validNHSNumber(number)) {
         return false
