@@ -56,7 +56,7 @@ The prototype I have developed uses the [BIP39 wordlist](https://github.com/bitc
   See above the decision was made for the proof of concept to use the BIP39 English wordlist as is, going forward this would need to be altered to use the correct spelling of words and replace some e.g. satoshi)
 
 - This sometimes creates four words.  
-  The NHS Number space is divided across the four nations as follows (at my best guess from public sources):
+  The NHS Number space is divided across the four nations as follows (at my best guess from public [sources](https://webarchive.nationalarchives.gov.uk/20130503132423/http://www.connectingforhealth.nhs.uk/systemsandservices/nhsnumber/staff/guidance/factsheet.pdf) [2012]):
   - 010 101 0000 to 311 299 9999 is allocated to the [CHI number](https://en.wikipedia.org/wiki/Community_Health_Index_(Scotland)) in Scotland.
   - 320 000 0010 to 399 999 9999 is allocated to Northern Ireland.
   - 400 000 0008 to 499 999 9999 and 600 000 0000 to 708 800 0019 are the current issuing ranges in England, Wales and Isle of Man. Legacy numbers in England are also in the ranges 3xx xxx xxxx and 72x xxx xxxx overlapping with the Northern Ireland allocation.
