@@ -692,3 +692,23 @@
   color: gray;
   font-size: smaller;
 }
+
+blockquote.warning {
+  padding: 1em;
+  color: #000;
+  border-left: 0.25em solid #D8000C;
+  background-color: #FFD2D2;
+}
+
+blockquote.info {
+  padding: 1em;
+  color: #000;
+  border-left: 0.25em solid #00529B;
+  background-color: #BDE5F8;
+}
+
+blockquote.box {
+  padding: 1em;
+  color: #333;
+  background-color: #f7f7f7;
+}
