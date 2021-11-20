@@ -8,7 +8,7 @@ tag: "how-to"
 
 # How-to: Gain Work/Life Balance on your Android Phone
 
-In an ideal world your employer would provide you with a "Work Phone" so you can easily and physically separate your work from your personal life by turning off/physically discarding the device. Unfortunately one of the largest employers<sup>[1](#employers)</sup> in the UK doesn't routinely offer this for a large proportion of their workforce. This results in work inevitably encroaching on personal time either through unwanted phone calls, group messages, pleading e-mails and other distractions.
+In an ideal world your employer would provide you with a "Work Phone" so you can easily and physically separate your work from your personal life by turning off/physically discarding the device. Unfortunately one of the largest employers[^1] in the UK doesn't routinely offer this for a large proportion of their workforce. This results in work inevitably encroaching on personal time either through unwanted phone calls, group messages, pleading e-mails and other distractions.
 
 Recent (and old) discussions on Twitter have once again highlighted the different 'hacks' that people have developed to gain some sort of separation. This has finally prompted me to finally writeup the different components/options/evolution of my solution to this problem over the years.
 
@@ -133,4 +133,4 @@ Other tasks to consider also include:
 
 ---
 
-<a name="employers">[1]</a>: The NHS, which is also one of the [largest employers in the world](https://en.wikipedia.org/wiki/List_of_largest_employers). Though admittedly responsibility of "Work Phones" etc. is really that of the individual employing NHS organisations as "The NHS" isn't really an institution but that is a much larger footnote...
+[^1]: The NHS, which is also one of the [largest employers in the world](https://en.wikipedia.org/wiki/List_of_largest_employers). Though admittedly responsibility of "Work Phones" etc. is really that of the individual employing NHS organisations as "The NHS" isn't really an institution but that is a much larger footnote...

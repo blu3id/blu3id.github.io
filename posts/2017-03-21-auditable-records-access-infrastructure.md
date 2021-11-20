@@ -175,7 +175,7 @@ An interaction with the Audit Service would be as follows:
 }
 ```
 
-The Audit Service would generate a random salt and hash as follows: `salt` + `patient_id` + `request` to generate the request_hash.<sup>[1](#note1)</sup> A random key is generated and used to encrypt the whole request_detail object. The specified public keys are fetched from the Public Key Service and used to separately encrypt the random key. The following object would be stored in the log the hash added to the Merkle tree:
+The Audit Service would generate a random salt and hash as follows: `salt` + `patient_id` + `request` to generate the request_hash.[^1] A random key is generated and used to encrypt the whole request_detail object. The specified public keys are fetched from the Public Key Service and used to separately encrypt the random key. The following object would be stored in the log the hash added to the Merkle tree:
 
 ```
 {  
@@ -245,4 +245,5 @@ Hopefully going forward we can have an open discussion as a community about how 
 I welcome any feedback, comments, criticism or suggestions on what I have outlined.
 
 ---
-<a name="note1">[1]</a>: Yes my limited cryptography understanding says this is probably a bad idea see MAC-then-encrypt vs encrypt-then-MAC argument. However this post is only outlining a possible solution. Further thought and scrutiny should be applied before implementation.
+
+[^1]: Yes my limited cryptography understanding says this is probably a bad idea see MAC-then-encrypt vs encrypt-then-MAC argument. However this post is only outlining a possible solution. Further thought and scrutiny should be applied before implementation.
