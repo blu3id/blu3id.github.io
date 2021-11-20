@@ -3,6 +3,7 @@ layout: default-date
 title: "How-to: Gain Work/Life Balance on your Android Phone"
 permalink: "/posts/how-to-work-life-phone"
 date: 2021-03-28
+tag: "how-to"
 ---
 
 # How-to: Gain Work/Life Balance on your Android Phone

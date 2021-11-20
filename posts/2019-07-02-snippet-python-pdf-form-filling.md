@@ -3,6 +3,7 @@ layout: default-date
 title: "Snippet: Filling a PDF form using Python"
 permalink: "/posts/snippet-python-pdf-form-filling"
 date: 2019-07-02
+tag: "snippet"
 ---
 
 # Snippet: Filling a PDF form using Python
