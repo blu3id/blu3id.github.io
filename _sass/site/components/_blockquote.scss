@@ -1,0 +1,120 @@
+blockquote {
+  padding: 1px 1em;
+  color: var(--box-grey-color);
+  background-color: var(--box-grey-background);
+  border-left: 0.25em solid var(--box-grey-border);
+  margin: 1em 0;
+  box-sizing: border-box;
+  page-break-inside: avoid;
+
+  :last-child {
+    margin-bottom: 1em;
+  }
+
+  a[href] {
+    color: var(--box-grey-link-color);
+    text-decoration: underline;
+
+    &:hover,
+    &:active {
+      color: var(--box-grey-link-color-hover);
+      text-decoration-thickness: 0.15rem;
+    }
+  }
+
+  &.warning,
+  &.info,
+  &.box {
+    padding: 1em;
+
+    > :first-child {
+      margin-top: 0;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      color: var(--box-heading-color);
+      display: block;
+      position: relative;
+      left: -1em;
+      top: -1em;
+      padding: 0.3em;
+      font-weight: bold;
+    }
+  }
+
+  &.warning {
+    color: var(--box-warning-color);
+    border: 0.25em solid var(--box-warning-border);
+    background-color: var(--box-warning-background);
+
+    &::before {
+      content: "⚠️ Warning";
+      background: var(--box-warning-border);
+      width: 6em;
+    }
+  }
+
+  &.info {
+    color: var(--box-info-color);
+    border: 0.25em solid var(--box-info-border);
+    background-color: var(--box-info-background);
+
+    &::before {
+      content: "ℹ️ Info";
+      background: var(--box-info-border);
+      width: 4em;
+    }
+
+    a[href] {
+      color: var(--box-info-link-color);
+
+      &:hover,
+      &:active {
+        color: var(--box-info-link-color-hover);
+      }
+    }
+  }
+
+  &.box {
+    color: var(--box-grey-color);
+    border: 0.1em solid var(--box-grey-border);
+    background-color: var(--box-grey-background);
+
+    a[href] {
+      color: var(--box-grey-link-color);
+
+      &:hover,
+      &:active {
+        color: var(--box-grey-link-color-hover);
+      }
+    }
+  }
+}
+
+/*
+blockquote:not(.box):not(.warning):not(.info) p:first-of-type {
+  position: relative;
+  isolation: isolate;
+
+  &:before {
+    content: open-quote;
+    position: absolute;
+    font-size: 6em;
+    font-weight: 600;
+    font-family: serif;
+    color: hsl(300, 1, 75);
+    z-index: -1;
+    top: -0.2em;
+    left: -0.1em;
+    line-height: 1;
+  }
+
+  &:after {
+    content: no-close-quote;
+  }
+}
+*/

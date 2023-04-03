@@ -1,0 +1,43 @@
+@media print {
+  html,
+  body {
+    background-color: transparent;
+    border-top: none;
+  }
+  header {
+    display: none;
+  }
+  main {
+    padding: 0;
+    font-size: 0.7rem;
+  }
+  article {
+    figure {
+      margin: 1em 0;
+    }
+    details {
+      border: 0;
+      summary {
+        margin: 0;
+        span {
+          display: none;
+        }
+      }
+    }
+    .subscribe {
+      display: none;
+    }
+  }
+  footer {
+    display: none;
+  }
+  ul.timeline > li {
+    padding: 0 0 1em 2.5em;
+    margin: 0 0 0 2em;
+
+    &::before {
+      position: relative;
+      top: 0;
+    }
+  }
+}

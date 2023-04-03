@@ -1,5 +1,5 @@
 ---
-layout: default-date
+layout: default
 title: "NHS Digital's War Against Innovation"
 permalink: "/posts/nhs-digital-war-against-innovation"
 date: 2021-11-19
@@ -7,13 +7,16 @@ date: 2021-11-19
 
 # NHS Digital's War Against Innovation
 
+{: class="info"}
+> **Update March 2023**: While things have improved since this was published in November 2021 with NHS Digital (now part of NHS England) launching a more comprehensive documentation effort and ["Developer Portal"](https://digital.nhs.uk/developer) of sorts. As [noted](#update) when first published there are still significant barriers to entry ([HSCN access](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation/nhs-smartcards-for-developers#applying-for-a-smartcard-to-use-in-testing), associated assurance and [chicken + egg problem](#bureaucratic)) for a range of APIs.
+
 A recent[^1] [post](https://discourse.digitalhealth.net/t/ers-api-anyone-with-any-experience-with-this/20124) on the [Digital Health Networks](https://discourse.digitalhealth.net/) forum asking about how to use Care Identity Service SmartCard authentication for the [eRS](https://digital.nhs.uk/services/e-referral-service) reminded me of the challenges I started to uncover as I went about trying to realise my idea of a stand alone virtual prescription pad for [EPS](https://digital.nhs.uk/services/electronic-prescription-service) at the start of the pandemic (something being widely sought by all manner of services that were used to using FP10s but that is another story for another time).
 
 As I went about digging up memories of what I had gleaned through hour of research, experimentation and use of human sources I though perhaps it is worth writing out ways that NHS Digital stifles and suppresses innovation on it's platform of digital services - the so-called [Spine](https://digital.nhs.uk/services/spine) - that underpin large swathes of the day to day business of the NHS in England.
 
 My aim here is to:
 1. To publicly encourage NHS Digital to do better.
-2. To shame NHSx who proclaim [responsibility](https://www.nhsx.nhs.uk/about-us/what-we-do/) for this under so-called "Mission 2" & "Mission 3" by:
+2. To shame NHSx who proclaim [responsibility](https://web.archive.org/web/20211025202105/https://www.nhsx.nhs.uk/about-us/what-we-do/){:data-originalurl="https://www.nhsx.nhs.uk/about-us/what-we-do/" data-versiondate="2021-10-25"} for this under so-called "Mission 2" & "Mission 3" by:
    > **Driving implementation**  
    > Delivering APIs and documentation to empower developers and data analysts across the NHS and the health tech industry
 
@@ -59,7 +62,6 @@ So to conclude no-wonder the health IT marketplace is strewn with substandard pr
 
 So since April it appears that things have started to improve slightly using my original use case of EPS there is now a Beta production RESTful API that provides a limited interface to EPS, and it is reasonably [documented](https://digital.nhs.uk/developer/api-catalogue/electronic-prescription-service-fhir). There are however fundamental limitations around authentication and signing that have still not been resolved (you still need HSCN, a SmartCard and and Assured EPS solution to do the  prescription signing). But things are moving forward perhaps?
 
----
 
 [^1]: Well it was recent when I started writing this post back in April 2021... graduation from my drafts folder however appears to have taken rather some time.
 

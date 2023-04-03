@@ -1,0 +1,75 @@
+article {
+  code {
+    padding: 0.2em 0;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(0, 0, 0, 0.04);
+
+    &:before,
+    &:after {
+      letter-spacing: -0.2em;
+      content: "\00a0";
+    }
+  }
+
+  pre {
+    word-break: normal;
+    word-wrap: normal;
+    padding: 1em;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.4;
+    background-color: #000000;
+    color: #ffffff;
+    display: block;
+
+    code {
+      &:before,
+      &:after {
+        content: normal;
+      }
+    }
+  }
+
+  .highlight {
+    margin-bottom: 1.1em;
+
+    code {
+      padding: 0;
+      overflow: auto;
+      background-color: #000000;
+      display: block;
+      margin-bottom: 1em;
+
+      .rouge-table {
+        border-spacing: 0;
+        border: 0;
+        font-size: 1em;
+        margin: 0;
+
+        tr,
+        td {
+          padding: 0;
+          border: 0;
+        }
+
+        .lineno {
+          border-radius: 0;
+          margin: 0;
+          text-align: center;
+          min-width: 1.1em;
+        }
+
+        .rouge-code pre {
+          border-radius: 0;
+          margin: 0;
+        }
+      }
+
+      &:before,
+      &:after {
+        content: normal;
+      }
+    }
+  }
+}

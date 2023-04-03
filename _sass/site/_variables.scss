@@ -1,0 +1,95 @@
+$max-width: 800px;
+$min-width: 500px;
+
+:root {
+  --color: #333333;
+  --color-inverted: #ffffff;
+  --color-light: #545354;
+  --background: #f6f6f8;
+  --accent: hsl(206, 100%, 32%);
+  --accent-light: hsl(206, 100%, 39%);
+  --link: var(--accent-light);
+
+  --box-heading-color: #ffffff;
+
+  --box-intro-background: #122b45;
+  --box-intro-border: hsl(206 100% 20%);
+
+  --box-grey-background: #d9d9d9;
+  --box-grey-border: #858585;
+  --box-grey-color: #000000;
+  --box-grey-link-color: var(--color-light);
+  --box-grey-link-color-hover: #000000;
+
+  --box-info-background: #b8e0ff;
+  --box-info-border: var(--accent);
+  --box-info-color: #000000;
+  --box-info-link-color: var(--color-light);
+  --box-info-link-color-hover: #000000;
+
+  --box-warning-background: #ffd2d2;
+  --box-warning-border: #d8000c;
+  --box-warning-color: #000000;
+
+  --title-background: #414e58;
+
+  --footer-background: var(--box-intro-background);
+  --footer-color: var(--color-inverted);
+  --footer-border: var(--color);
+  --footer-time-color: var(--color-inverted);
+  --footer-tag-background: var(--color-inverted);
+  --footer-tag-color: var(--footer-background);
+  --footer-a-color: var(--footer-color);
+  --footer-a-color-hover: var(--box-grey-background);
+
+  --icon-arrow-up-right-from-square: #{url($arrow-up-right-from-square)};
+  --icon-link-slash: #{url($link-slash)};
+  --icon-clock-rotate-left: #{url($clock-rotate-left)};
+  --icon-file-pdf-solid: #{url($file-pdf-solid)};
+  --icon-file-pdf-color: #d8000c;
+  --icon-file-excel-solid: #{url($file-excel-solid)};
+  --icon-file-excel-color: #1d6f42;
+  --icon-square-rss: #{url($square-rss)};
+  --icon-square-rss-color: #f26522;
+
+  --type-scale: 1.25;
+  --size-step-0: 1em;
+  --size-step-1: calc(var(--size-step-0) * var(--type-scale));
+  --size-step-2: calc(var(--size-step-1) * var(--type-scale));
+  --size-step-3: calc(var(--size-step-2) * var(--type-scale));
+  --size-step-4: calc(var(--size-step-3) * var(--type-scale));
+
+  @media screen and (max-width: $min-width) {
+    --type-scale: 1.2;
+  }
+
+  /*
+    calc(ZZ + ((1vw - XX) * YY))
+    Where   XX = min_viewport / 100
+            YY = 100 * (max_font_size - min_font_size) / (max_viewport - min_viewport)
+               = 100 * font_size_difference in PX / viewport_difference
+            ZZ = Minimum font-size stated in REM
+    */
+
+  --margin--1-6-0: clamp(
+    -1.6rem,
+    calc(0rem - ((1vw - 0.4rem) * 44.4444)),
+    0rem
+  );
+  --padding-2-1: clamp(1rem, calc(1rem + ((1vw - 0.25rem) * 6.6666)), 2rem);
+  --padding-1-0: clamp(0rem, calc(((1vw - 0.25rem) * 6.6666)), 1rem);
+  --size-step-1-08: clamp(
+    0.8rem,
+    calc(0.8rem + ((1vw - 0.25rem) * 1.3333)),
+    1rem
+  );
+  --size-step-09-08: clamp(
+    0.8rem,
+    calc(0.8rem + ((1vw - 0.25rem) * 0.6666)),
+    0.9rem
+  );
+
+  @media (prefers-color-scheme: dark) {
+    --color: #333333;
+  }
+}

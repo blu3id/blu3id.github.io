@@ -1,0 +1,233 @@
+name: Deploy Jekyll site to Pages
+
+on:
+  push:
+    branches: master
+    paths-ignore:
+      - "outlinks*"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+env:
+  JEKYLL_VERSION: 3.8
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Cache jekyll/jekyll container
+        id: cache-docker-jekyll
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/jekyll-builder
+          key: cache-docker-jekyll-${{ env.JEKYLL_VERSION }}
+
+      - name: Fetch jekyll/jekyll container if cache miss
+        if: steps.cache-docker-jekyll.outputs.cache-hit != 'true'
+        run: |
+          docker pull jekyll/jekyll:$JEKYLL_VERSION
+          mkdir -p ~/.cache/jekyll-builder
+          docker image save jekyll/jekyll:$JEKYLL_VERSION \
+          --output ~/.cache/jekyll-builder/jekyll-builder-$JEKYLL_VERSION.tar
+
+      - name: Load jekyll/jekyll container if cache hit
+        if: steps.cache-docker-jekyll.outputs.cache-hit == 'true'
+        run: |
+          docker image load --input \
+          ~/.cache/jekyll-builder/jekyll-builder-$JEKYLL_VERSION.tar
+
+      - name: Cache Gems for jekyll/jekyll
+        id: cache-jekyll-gems
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/jekyll-gems
+          key: cache-jekyll-gems-${{ env.JEKYLL_VERSION }}
+
+      - name: Build using jekyll/jekyll container
+        env:
+          JEKYLL_ENV: production
+          NOKOGIRI_USE_SYSTEM_LIBRARIES: true
+        run: |
+          export JEKYLL_UID=$(id --user)
+          docker run \
+          --volume ${{ github.workspace }}:/srv/jekyll \
+          --volume ~/.cache/jekyll-gems:/usr/local/bundle \
+          --env JEKYLL_ENV --env NOKOGIRI_USE_SYSTEM_LIBRARIES \
+          --env JEKYLL_UID \
+          jekyll/jekyll:$JEKYLL_VERSION \
+          jekyll build --future
+
+      # Install shot-scraper and capture Open Graph previews
+      - name: Create requirements.txt
+        working-directory: ${{ github.workspace }}
+        run: |
+          echo "shot-scraper" > requirements.txt
+
+      - name: Configure Python with pip cache
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+          cache: "pip"
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/ms-playwright/
+          key: ${{ runner.os }}-browsers
+
+      - name: Install shot-scraper & Playwright browsers
+        run: |
+          pip install shot-scraper
+          shot-scraper install
+
+      - name: Capture Open Graph Previews using shot-scraper
+        working-directory: ${{ github.workspace }}
+        run: |
+          shot-scraper multi ./_site/og-preview/_og_previews.yml --retina
+          rm -rf ./_site/og-preview
+
+      - name: Upload Pages artifact
+        # Automatically uploads an artifact from the './_site'
+        # directory by default
+        uses: actions/upload-pages-artifact@v1
+
+      - name: Upload outlinks artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: outlinks
+          path: outlinks*.json
+
+  # Pages Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+
+  # Outlinks Archive job
+  outlinks-archive:
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Download outlinks artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: outlinks
+
+      - name: Setup Golang
+        uses: actions/setup-go@v4
+        with:
+          go-version: "1.20"
+          cache-dependency-path: .github/workflows/outlinks.go
+
+      - name: Run Oulinks Script - Archive Outlinks
+        working-directory: ${{ github.workspace }}
+        env:
+          SPN2_S3_KEY: ${{ secrets.SPN2_S3_KEY }}
+          DEBUG: ${{ vars.DEBUG }}
+        run: |
+          go run .github/workflows/outlinks.go archive > $GITHUB_STEP_SUMMARY
+
+      - name: Upload outlinks artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: outlinks
+          path: outlinks*.json
+
+      - name: Commit outlinks.json if updated
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add outlinks.json
+          git commit -m "Updated outlinks" || exit 0
+          git push
+
+  # Outlinks Check & Fix job
+  outlinks-fix:
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Download outlinks artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: outlinks
+
+      - name: Setup Golang
+        uses: actions/setup-go@v4
+        with:
+          go-version: "1.20"
+          cache-dependency-path: .github/workflows/outlinks.go
+
+      - name: Create a new branch for fixed/marked broken outlinks
+        id: git-branch-create
+        run: |
+          timestamp=$(date -u +"%Y-%m-%d-%H%M%S")
+          echo "TIMESTAMP=${timestamp}" >> $GITHUB_OUTPUT
+          git config user.name "GitHub Actions"
+          git config user.email "actions@users.noreply.github.com"
+          git branch "outlinks-fix-${timestamp}"
+          git checkout "outlinks-fix-${timestamp}"
+
+      - name: Run Oulinks Script - Check & Fix Outlinks
+        id: outlinks-script
+        working-directory: ${{ github.workspace }}
+        env:
+          DEBUG: ${{ vars.DEBUG }}
+        run: |
+          JOB_SUMMARY=$(go run .github/workflows/outlinks.go check)
+          echo "$JOB_SUMMARY" > $GITHUB_STEP_SUMMARY
+          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+          echo "JOB_SUMMARY<<$EOF" >> $GITHUB_OUTPUT
+          echo "$JOB_SUMMARY" >> $GITHUB_OUTPUT
+          echo "$EOF" >> $GITHUB_OUTPUT
+
+      - name: Commit fixed/marked broken outlinks
+        run: |
+          git add posts/
+          git commit -m "Fix/Mark broken outlinks" || exit 0
+          git push --set-upstream origin \
+            outlinks-fix-${{steps.git-branch-create.outputs.TIMESTAMP}}
+
+      - name: Create pull request for fixed/marked broken outlinks
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git ls-remote --exit-code --heads origin \
+          outlinks-fix-${{steps.git-branch-create.outputs.TIMESTAMP}} \
+          || exit 0
+          gh pr create -B master -H \
+          outlinks-fix-${{steps.git-branch-create.outputs.TIMESTAMP}} \
+          --title 'Fix/Mark broken outlinks' \
+          --body '${{steps.outlinks-script.outputs.JOB_SUMMARY}}'

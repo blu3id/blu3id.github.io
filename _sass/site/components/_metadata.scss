@@ -1,0 +1,119 @@
+details#metadata {
+  background-color: var(--color-inverted);
+  border: 0.05em solid var(--box-grey-background);
+  border-bottom-width: 0.2em;
+  margin: 1em 0 2em;
+  page-break-inside: avoid;
+
+  &[open] {
+    border-bottom-width: 0.05em;
+
+    summary span::before {
+      content: "➖";
+    }
+  }
+
+  &:hover {
+    border-color: var(--box-grey-border);
+  }
+
+  summary {
+    background-color: var(--color-inverted);
+    border-top: 4px solid transparent;
+    display: block;
+    margin: 1em 1.2em 1.2em;
+    font-size: smaller;
+    position: relative;
+
+    small {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
+    time {
+      font-size: 1em;
+    }
+
+    dl {
+      margin: 0;
+      display: inline;
+
+      dt {
+        display: inline;
+        font-weight: 500;
+
+        &::after {
+          content: ": ";
+        }
+
+        &::before {
+          content: "";
+          display: block;
+        }
+      }
+
+      dd {
+        display: inline;
+        margin: 0;
+      }
+    }
+
+    &:focus span {
+      outline: 3px solid transparent;
+      color: #0b0c0c;
+      background-color: #fd0;
+      box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+      text-decoration: none;
+    }
+
+    span {
+      cursor: pointer;
+      text-underline-offset: 0.1em;
+      text-decoration: underline;
+      display: inline;
+      white-space: nowrap;
+      margin-right: 2.5em;
+
+      &::before {
+        content: "➕";
+        color: var(--color-inverted);
+        margin-right: 0.4em;
+        display: inline-block;
+        border-radius: 50%;
+        width: 1.5em;
+        text-align: center;
+        vertical-align: text-top;
+        box-sizing: border-box;
+        padding: 0 0.1em;
+        font-size: 0.9em;
+      }
+
+      &:hover,
+      &:active {
+        text-decoration-thickness: 0.15rem;
+        color: var(--box-info-color);
+      }
+    }
+  }
+
+  ul {
+    margin: 1em;
+    padding: 0;
+    border-top: 0.05em solid var(--accent);
+
+    time {
+      font-size: 1em;
+      color: inherit;
+      font-weight: 500;
+      display: block;
+    }
+
+    li {
+      display: block;
+      padding: 0;
+      font-size: smaller;
+      margin: 1em 0;
+    }
+  }
+}

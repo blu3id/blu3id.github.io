@@ -1,0 +1,14 @@
+---
+layout: compress
+---
+{%- capture _content %}{{ content }}{% endcapture %}
+{%- assign _buffer = _content | split: '<div class="footnotes" role="doc-endnotes">' %}
+{%- if _buffer.size != 2 %}
+    {%- assign _buffer = _content | split: '<details id="metadata">' %}
+    {%- assign _content = "" %}
+    {%- capture _content %}{{ _buffer.first }}{% include subscribe.html %}<details id="metadata">{{ _buffer.last }}{% endcapture %}
+{%- else %}
+    {%- assign _content = "" %}
+    {%- capture _content %}{{ _buffer.first }}{% include subscribe.html %}<div class="footnotes" role="doc-endnotes">{{ _buffer.last }}{% endcapture %}
+{%- endif %}
+{{- _content }}

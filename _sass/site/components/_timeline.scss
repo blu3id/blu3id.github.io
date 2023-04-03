@@ -1,0 +1,83 @@
+ul.timeline {
+  list-style: none;
+  padding: 0;
+
+  > li {
+    position: relative;
+    border-left: 0.1em solid var(--box-grey-border);
+    height: auto;
+    padding: 0 0 1em 2.5em;
+    margin: 0 0 0 -2.5em;
+    margin: 0 0 0 clamp(-2.5em, calc(2em - ((1vw - 0.4rem) * 59.2105)), 2em);
+
+    @media screen and (max-width: $min-width) {
+      padding: 0;
+      margin: 0;
+      border: none;
+    }
+
+    &::before {
+      content: attr(data-timeline);
+      position: sticky;
+      top: 1em;
+      margin-left: -4.4em;
+      border: 0.1em solid var(--accent);
+      background: var(--background);
+      border-radius: 100em;
+      display: grid;
+      width: 3.5em;
+      height: 2em;
+      text-align: center;
+      align-items: center;
+      font-weight: 500;
+      z-index: 2;
+
+      @media screen and (max-width: $min-width) {
+        right: 0;
+        top: -0.3em;
+        position: absolute;
+      }
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+
+      > p:first-of-type {
+        margin-top: -2.9em;
+
+        @media screen and (max-width: $min-width) {
+          margin-top: 1em;
+        }
+      }
+
+      &::before {
+        margin-bottom: 1em;
+      }
+
+      &::after {
+        content: "";
+        position: relative;
+        bottom: 0;
+        width: 3.7em;
+        border-top: 0.1em solid var(--accent);
+        display: block;
+        margin-left: -4.4em;
+        z-index: 2;
+
+        @media screen and (max-width: $min-width) {
+          display: none;
+        }
+      }
+    }
+
+    > p:first-of-type {
+      margin-top: -1.9em;
+      padding-right: 4em;
+
+      @media screen and (max-width: $min-width) {
+        margin-top: 1em;
+      }
+    }
+  }
+}

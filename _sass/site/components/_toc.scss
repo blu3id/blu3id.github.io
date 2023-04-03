@@ -1,0 +1,22 @@
+#markdown-toc {
+  padding: 1em 1em 1em 2.5em;
+  margin: 1em 0;
+  box-sizing: border-box;
+  background-color: var(--color-inverted);
+  color: var(--box-grey-color);
+  border: 0.1em solid var(--box-grey-background);
+  page-break-inside: avoid;
+
+  &::before {
+    content: "📖 Contents";
+    background: var(--box-grey-background);
+    width: 6em;
+    color: var(---color);
+    display: block;
+    position: relative;
+    left: -1em;
+    top: -1em;
+    padding: 0.3em;
+    font-weight: bold;
+  }
+}

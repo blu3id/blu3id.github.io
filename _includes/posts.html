@@ -1,0 +1,31 @@
+    {%- if include.tag %}
+    {%- assign pages = site.pages | sort:"date" | reverse | where_exp: "item", "item.draft != true" | where_exp: "item", "item.unlisted != true" | where_exp: "item", "item.date" | where_exp: "item", "item.tag == include.tag" %}
+    {%- else %}
+    {%- assign pages = site.pages | sort:"date" | reverse | where_exp: "item", "item.draft != true" | where_exp: "item", "item.unlisted != true" | where_exp: "item", "item.date" %}
+    {%- endif %}
+    {%- for page in pages %}
+    {%- assign currentdate = page.date | date: "%Y" %}
+        {%- if currentdate != date %}
+    {%- unless forloop.first %}
+    </ul>
+    </div>
+    {%- endunless %}
+    <div id="y{{page.date | date: "%Y"}}" class="posts">
+    <h3>{{ currentdate }}</h3>
+    <ul>
+        {%- assign date = currentdate %}
+        {%- endif %}
+        <li>
+        {%- if page.tag %}
+        {%- assign tag = page.tag | capitalize %}
+        <span class="tag {{ page.tag }}">{{ page.tag | capitalize }}</span> <a href="{{ page.url }}">{{ page.title | replace:tag,'' | replace:':','' | markdownify | strip_html | strip_newlines }}</a>
+        {%- else %}
+        <a href="{{ page.url }}">{{ page.title | markdownify | strip_html | strip_newlines }}</a>
+        {%- endif %}
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>
+        </li>
+    {%- if forloop.last %}
+    </ul>
+    </div>
+    {%- endif %}
+    {%- endfor %}

@@ -1,0 +1,35 @@
+---
+layout: compress
+---
+<!doctype html>
+<html lang="en">
+<head>
+{% include head.html %}
+</head>
+<body>
+{% include header.html %}
+  <main class="posts">
+    {%- assign pages = site.pages | sort:"date" | reverse | where_exp: "item", "item.draft != true" | where_exp: "item", "item.date" %}
+    {%- for page in pages %}
+      {%- if page.tag %}
+        {%- unless tags %}
+          {%- assign tags = page.tag | split:'|' %}
+        {%- endunless %}
+        {%- unless tags contains page.tag %}
+          {%- assign tags = tags | join:'|' | append:'|' | append:page.tag | split:'|' | sort %}
+        {%- endunless %}
+      {%- endif %}
+    {%- endfor %}
+    <div class="tag-filter">
+      <h1>Posts</h1>
+      <span>
+        {%- for tag in tags %}
+        <a href="{% if page.tag == tag %}/posts/{% else %}/posts/tag:{{tag}}{% endif %}"><span class="tag {{tag}}{% if page.tag == tag %} active{% endif %}">{{ tag | capitalize }}</span></a>
+        {%- endfor %}
+      </span>
+    </div>
+    {%- include posts.html tag=page.tag %}
+  </main>
+{% include footer.html %}
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" class="preview">
+<head>
+  <meta charset="utf-8">
+  {%- if page.draft %}
+  <meta name="robots" content="noindex">
+  {%- endif %}
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+  <title>{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}</title>
+  {%- capture styles %}
+    @import "svg-icons";
+    @import "normalize";
+    @import "pygments-native";
+    @import "site";
+    @import "og-preview";
+  {%- endcapture %}
+  <style>
+    {{ styles | scssify | strip_newlines }}
+  </style>
+  <link rel="canonical" href="{{ site.production_url }}{{ page.url | replace:'/index.html','' | replace:'/og-preview','' }}">
+  <base href="../..{{ page.url | replace:'/index.html','' | replace:'/og-preview','' }}/" />
+</head>
+<body>
+  <main class="preview">
+    <article{% if page.draft %} class="draft{% if page.tag %} {{ page.tag }}{% endif  %}"{% else %}{% if page.tag %} class="{{ page.tag }}"{% endif  %}{% endif %}>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>
+{%- if page.tag %}
+  {%- assign tag = page.tag | capitalize %}
+  {%- assign title = page.title | prepend:'# ' | markdownify %}
+      <h1 id="{{ page.title | slugify }}" class="with-tag"><span class="tag {{ page.tag }}">{{ page.tag | capitalize }}</span> <span class="title">{{ page.title | replace:tag,'' | replace:':','' | markdownify | strip_html | strip_newlines | escape_once }}</span></h1>
+  {{ page.content | replace_first:title,'' | markdownify | replace: '"/assets', '"../../assets' }}
+{%- else %}
+      {{ content | replace: '"/assets', '"../../assets' }}
+{%- endif %}
+    </article>
+  </main>
+</body>
+</html>

@@ -1,0 +1,46 @@
+div.posts {
+  clear: both;
+
+  h3 {
+    float: left;
+    font-size: 1em;
+    font-weight: normal;
+    margin: 0;
+  }
+
+  ul {
+    padding-left: 3em;
+  }
+
+  li {
+    list-style: none;
+    margin-bottom: 1em;
+
+    &.more {
+      margin-top: 1.5em;
+
+      a[href] {
+        color: var(--color);
+
+        &:hover {
+          color: var(--box-grey-link-color-hover);
+        }
+
+        &::after {
+          content: " →";
+        }
+      }
+    }
+  }
+
+  time {
+    color: var(--color-light);
+    word-spacing: -0.5px;
+    font-size: 0.8em;
+    white-space: nowrap;
+  }
+
+  &.inline ul {
+    padding-left: 0;
+  }
+}

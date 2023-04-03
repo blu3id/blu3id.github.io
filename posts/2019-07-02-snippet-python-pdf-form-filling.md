@@ -1,5 +1,5 @@
 ---
-layout: default-date
+layout: default
 title: "Snippet: Filling a PDF form using Python"
 permalink: "/posts/snippet-python-pdf-form-filling"
 date: 2019-07-02
@@ -14,11 +14,11 @@ TL;DR find the code here: <https://github.com/blu3id/python-pdf-form-filling>
 
 ## The What
 
-This Snippet was to enable the [HMRC Starter Checklist](https://www.gov.uk/government/publications/paye-starter-checklist) [PDF](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/783186/Starter_checklist_for_2019_to_2020.pdf) to be pragmatically filled by a python app.
+This Snippet was to enable the [HMRC Starter Checklist](https://www.gov.uk/government/publications/paye-starter-checklist) [PDF](https://web.archive.org/web/20190725170132/https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/783186/Starter_checklist_for_2019_to_2020.pdf){:data-originalurl="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/783186/Starter_checklist_for_2019_to_2020.pdf" data-versiondate="2019-07-25"} to be pragmatically filled by a python app.
 
 ## The How
 
-Standing on the shoulders of others. A quick search of the internet showed a wonderful starting point from `Jan Chęć` in the post "[Filling PDF Forms In Python — The Right Way](https://medium.com/@zwinny/filling-pdf-forms-in-python-the-right-way-eb9592e03dba)" which lead to "[How to Populate Fillable PDF's with Python](https://bostata.com/how-to-populate-fillable-pdfs-with-python/)"
+Standing on the shoulders of others. A quick search of the internet showed a wonderful starting point from `Jan Chęć` in the post "[Filling PDF Forms In Python — The Right Way](https://medium.com/@zwinny/filling-pdf-forms-in-python-the-right-way-eb9592e03dba)" which lead to "[How to Populate Fillable PDF's with Python](https://web.archive.org/web/20190830215626/https://bostata.com/how-to-populate-fillable-pdfs-with-python/){:data-originalurl="https://bostata.com/how-to-populate-fillable-pdfs-with-python/" data-versiondate="2019-08-30"}"
 
 ## The Detail
 
@@ -26,7 +26,7 @@ The heavy lifting is done by the [`pdfrw`](https://github.com/pmaupin/pdfrw) lib
 
 Unfortunately HMRC no longer provide a PDF form instead opting for a convoluted online form that spits out a rather ugly PDF. So the first step was to create a PDF form from the provided Starter Checklist (any good PDF editor).
 
-The next step was to stich it all together and solve the issue of filled form fields not having an associated rendered state. Trial and error and delving through the [PDF specification](https://www.adobe.com/content/dam/acom/en/devnet/pdf/pdfs/pdf_reference_archives/PDFReference.pdf) lead to the realisation that simply setting the `/ap dictionary` to an empty value made most PDF viewers re-render the set value.
+The next step was to stich it all together and solve the issue of filled form fields not having an associated rendered state. Trial and error and delving through the [PDF specification](https://web.archive.org/web/20190806160841/https://www.adobe.com/content/dam/acom/en/devnet/pdf/pdfs/pdf_reference_archives/PDFReference.pdf){:data-originalurl="https://www.adobe.com/content/dam/acom/en/devnet/pdf/pdfs/pdf_reference_archives/PDFReference.pdf" data-versiondate="2019-08-06"} lead to the realisation that simply setting the `/ap dictionary` to an empty value made most PDF viewers re-render the set value.
 
 ## The Code
 

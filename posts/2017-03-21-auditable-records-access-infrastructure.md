@@ -1,5 +1,5 @@
 ---
-layout: default-date
+layout: default
 title: "On infrastructure for verifiable auditable access to healthcare records"
 permalink: "/posts/auditable-records-access-infrastructure"
 date: 2017-03-21
@@ -8,9 +8,9 @@ date: 2017-03-21
 # On infrastructure for verifiable auditable access to healthcare records
 
 ## An Introduction
-I have been thinking about this complex topic since the excellent talk by [Andrew Eland](https://twitter.com/andreweland) ([Technical solutions to keep health data safe and secure](https://www.youtube.com/watch?v=69ZgCkYDI8w)) at the [Interop Summit](http://www.interopsummit.com/) on the 2nd of March. In this talk he briefly outlined some of the key challenges and potential technical solutions in this area and introduced the concept of Merkle trees. Some of this talk is covered in a later [Blog post](https://deepmind.com/post/trust-confidence-verifiable-data-audit/) published by Google DeepMind.
+I have been thinking about this complex topic since the excellent talk by [Andrew Eland](https://twitter.com/andreweland) ([Technical solutions to keep health data safe and secure](https://www.youtube.com/watch?v=69ZgCkYDI8w)) at the [Interop Summit](https://web.archive.org/web/20180203105906/https://interopsummit.com/){:data-originalurl="https://interopsummit.com/" data-versiondate="2018-02-03"} on the 2nd of March. In this talk he briefly outlined some of the key challenges and potential technical solutions in this area and introduced the concept of Merkle trees. Some of this talk is covered in a later [Blog post](https://www.deepmind.com/blog/trust-confidence-and-verifiable-data-audit/) published by Google DeepMind.
 
-This attempt to "put my thoughts to paper" was finally prompted by [Mark Wardle's](https://twitter.com/mwardle) [Blog post](http://wardle.org/information-governance/2017/03/19/information-governance.html) in which he asked about the real world potential of some of these solutions.
+This attempt to "put my thoughts to paper" was finally prompted by [Mark Wardle's](https://twitter.com/mwardle) [Blog post](https://wardle.org/information-governance/2017/03/19/information-governance.html) in which he asked about the real world potential of some of these solutions.
 
 ## The Problems (or at least some of them)
 1.	_Tamper proof audit log_  
@@ -31,13 +31,13 @@ This attempt to "put my thoughts to paper" was finally prompted by [Mark Wardle'
     To facilitate research or provision of certain third-party services it will inevitably become necessary to provide both patient level and record level pseudonymisation of data.
 
 ## Piecing Things Together
-[Adam Hatherly](https://twitter.com/adamhatherly) succinctly outlined some exciting designs for future healthcare record ecosystems in his talk ([The different designs of sharing platforms and the RESTful API future](https://www.youtube.com/watch?v=XByiQeXoOog) &mdash; [slides](https://drive.google.com/file/d/0Bwn8CEFskNi-NHRueXE2ZWRqWEE/view)) at the [Interop Summit](http://www.interopsummit.com/). This included my personal favourite a Registry Repository. However, it is important to be realistic about both the current state of electronic healthcare records in the UK and how these systems will likely change over the next 4 to 8 years. Sadly we are unlikely to be close to where I would want us to be (Registry Repository model) and are much more likely to be more deeply entrenched in the Single Shared Application (by incumbent vendors) model.
+[Adam Hatherly](https://twitter.com/adamhatherly) succinctly outlined some exciting designs for future healthcare record ecosystems in his talk ([The different designs of sharing platforms and the RESTful API future](https://www.youtube.com/watch?v=XByiQeXoOog) &mdash; [slides](https://drive.google.com/file/d/0Bwn8CEFskNi-NHRueXE2ZWRqWEE/view)) at the [Interop Summit](https://web.archive.org/web/20180203105906/https://interopsummit.com/){:data-originalurl="https://interopsummit.com/" data-versiondate="2018-02-03"}. This included my personal favourite a Registry Repository. However, it is important to be realistic about both the current state of electronic healthcare records in the UK and how these systems will likely change over the next 4 to 8 years. Sadly we are unlikely to be close to where I would want us to be (Registry Repository model) and are much more likely to be more deeply entrenched in the Single Shared Application (by incumbent vendors) model.
 
 Consequently a solution for verifiable audit needs to be able to be implemented today but be designed in such a way that is can naturally transform to be fully functional within a different records model.
 
 A high-level diagrammatic representation of how a system could fit into our current model of healthcare records:
 
-![Audit System Current Model](../images/audit_system.png)
+![Audit System Current Model](auditable-records-access-infrastructure/audit_system.drawio.svg)
  
 This is a grossly simplified view of most healthcare records systems in the UK. Proposed new components are shaded grey. Initially an audit service would only record access by 3rd parties to healthcare records. In the future this could be expanded to all access by all users.
 
@@ -58,7 +58,7 @@ Additional events/processes:
 
 How this system could then adapt on transition to a Registry Repository model:
 
-![Audit System Future Model](../images/audit_system_future.png)
+![Audit System Future Model](auditable-records-access-infrastructure/audit_system_future.drawio.svg)
 
 As with most distributed systems there is significantly more complexity (but greater flexibility and resilience) in this simplified view of a Registry Repository model. Existing audit components are shaded grey.
 
@@ -87,7 +87,7 @@ This would be a simple database service or key value store recording patient con
 
 `GET /consent/<patient_id>`  
 Return all recorded consents/dissents for patient e.g.
-```
+```json
 {  
    "direct_care":{  
       "consent":true,
@@ -104,7 +104,7 @@ Return all recorded consents/dissents for patient e.g.
 
 `GET /patients/<consent_type>`  
 Returns all patients with valid consent for this type e.g
-```
+```json
 [  
    {  
       "patient_id":1234567890,
@@ -145,7 +145,7 @@ I propose the following is stored:
 An interaction with the Audit Service would be as follows:
 
 `POST /entry/new`
-```
+```json
 {  
    "patient_id":1234567890,
    "request_detail":{  
@@ -177,7 +177,7 @@ An interaction with the Audit Service would be as follows:
 
 The Audit Service would generate a random salt and hash as follows: `salt` + `patient_id` + `request` to generate the request_hash.[^1] A random key is generated and used to encrypt the whole request_detail object. The specified public keys are fetched from the Public Key Service and used to separately encrypt the random key. The following object would be stored in the log the hash added to the Merkle tree:
 
-```
+```json
 {  
    "patient_id":1234567890,
    "request_hash":"hashabcdef1234",
@@ -200,7 +200,7 @@ The Audit Service would generate a random salt and hash as follows: `salt` + `pa
 ```
 
 The following would be returned to the client, to provide enough information to a Records System Proxy to verify the request_hash is valid for the request:
-```
+```json
 {  
    "patient_id":1234567890,
    "request_hash":"hashabcdef1234",
@@ -214,7 +214,7 @@ This is service that hasn't been mentioned in the above outlines but would be es
 An interaction would be as follows:
 
 `POST /request/new`
-```
+```json
 {  
    "patient_id":1234567890,
    "request_hash":"hashabcdef1234",
@@ -244,6 +244,5 @@ Hopefully going forward we can have an open discussion as a community about how 
 
 I welcome any feedback, comments, criticism or suggestions on what I have outlined.
 
----
 
 [^1]: Yes my limited cryptography understanding says this is probably a bad idea see MAC-then-encrypt vs encrypt-then-MAC argument. However this post is only outlining a possible solution. Further thought and scrutiny should be applied before implementation.

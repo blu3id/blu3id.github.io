@@ -1,0 +1,34 @@
+html.preview {
+  border-top: none;
+
+  &:after {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 0.3rem solid var(--accent);
+  }
+}
+
+main.preview {
+  h1 {
+    font-size: 2em;
+  }
+
+  article > h1 + blockquote.info {
+    display: none;
+  }
+
+  @media screen and (max-width: 800px) {
+    font-size: 0.7rem;
+
+    > article > h1 {
+      margin-top: 0;
+    }
+  }
+}
+
+.embed-slide,
+.reveal {
+  margin-top: 0.5em !important;
+}

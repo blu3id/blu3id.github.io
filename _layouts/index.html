@@ -1,0 +1,26 @@
+---
+layout: compress
+---
+<!doctype html>
+<html lang="en">
+<head>
+{% include head.html %}
+</head>
+<body>
+{% include header.html %}
+  <main class="index">
+    <div class="intro">
+      {{ page.content | markdownify }}
+    </div>
+    <div class="posts">
+      <ul>
+        {%- include posts-short.html limit=5 %}
+        <li class="more">
+          <a href="/posts">More posts</a>
+        </li>
+      </ul>
+    </div>
+  </main>
+{% include footer.html %}
+</body>
+</html>

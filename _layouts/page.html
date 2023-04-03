@@ -1,0 +1,25 @@
+---
+layout: compress
+---
+<!doctype html>
+<html lang="en">
+<head>
+{% include head.html %}
+</head>
+<body>
+{% include header.html %}
+  <main>
+    <article{% if page.draft %} class="draft{% if page.tag %} {{ page.tag }}{% endif  %}"{% else %}{% if page.tag %} class="{{ page.tag }}"{% endif  %}{% endif %}>
+{%- if page.tag %}
+  {%- assign tag = page.tag | capitalize %}
+  {%- assign title = page.title | prepend:'# ' %}
+      <h1 id="{{ page.title | slugify }}" class="with-tag"><span class="tag {{ page.tag }}">{{ page.tag | capitalize }}</span> <span class="title">{{ page.title | replace:tag,'' | replace:':','' | markdownify | strip_html | strip_newlines | escape_once }}</span></h1>
+  {{ page.content | replace_first:title,'' | markdownify | remove: ' role="doc-endnote"' | replace: '<pre class="highlight">', '<pre>' | replace: "<pre><code", "<code" | replace: "</code></pre>", "</code>" }}
+{%- else %}
+      {{ content | remove: ' role="doc-endnote"' | replace: '<pre class="highlight">', '<pre>' | replace: "<pre><code", "<code" | replace: "</code></pre>", "</code>" }}
+{%- endif %}
+    </article>
+  </main>
+{% include footer.html %}
+</body>
+</html>

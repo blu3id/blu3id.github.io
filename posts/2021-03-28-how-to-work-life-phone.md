@@ -1,5 +1,5 @@
 ---
-layout: default-date
+layout: default
 title: "How-to: Gain Work/Life Balance on your Android Phone"
 permalink: "/posts/how-to-work-life-phone"
 date: 2021-03-28
@@ -15,18 +15,17 @@ Recent (and old) discussions on Twitter have once again highlighted the differen
 Fair warning: The easiest and simplest solution with the best experience is to just get a separate "Work Phone" what follows is a 'hack' to avoid this you have been warned.
 
 ## How-to Guide
+{:.no_toc}
 
 {: class="warning"}
-> ⚠️ **First and most importantly a disclaimer:**
+> **First and most importantly a disclaimer:**
 >
-> This is not an idiot's-guide with detailed step-by-step instructions and as such requires some savvy, intuition and ability to seek out manuals/guides/documentation. _**No support or help beyond this post will be provided.**_
+> This is not an idiot's-guide with detailed step-by-step instructions and as such requires some savvy, intuition and ability to seek out manuals / guides / documentation. _**No support or help beyond this post will be provided.**_
 >
 > Obviously no liability is accepted for damage, expense, data-loss, missed calls etc. etc. caused by following these ideas. **Do so entirely at your own risk**.
 
-- [Step 1. Acquire another Phone Number](#step-1-acquire-another-phone-number)
-- [Step 2. The Magic (getting WhatsApp to work)](#step-2-the-magic-getting-whatsapp-to-work)
-- [Step 3.](#step-3)
-- [Known Issues](#known-issues)
+- Table of Contents
+{:toc}
 
 The requirements we are trying to achieve are to effectively merge two phones into one so we have the following functionality:
 - Two phone numbers (so the second can be used for work)
@@ -86,6 +85,7 @@ The breakthrough here was provided to me in this wonderful [blog post](https://s
 There are some options here that depend on the manufacture of your phone. There are different pros. and cons. depending on how you proceed.
 
 #### Option A: Manufacture provided
+
 Samsung has the [Dual Messenger](https://www.samsung.com/uk/support/mobile-devices/how-do-i-set-up-dual-messenger/) feature on some of their phones. Most OnePlus phones have the slightly more flexible [Parallel Apps](https://www.oneplus.com/uk/support/answer/detail/op98) feature.
 
 {: class="box"}
@@ -100,7 +100,7 @@ Samsung has the [Dual Messenger](https://www.samsung.com/uk/support/mobile-devic
 
 #### Option B: Shelter
 
-[Shelter](https://play.google.com/store/apps/details?id=net.typeblog.shelter) is an App that enables you to use the "Work Profile" feature of phones running Android 7 "Nougat" and above (phone released after late 2016) to create isolated copies of other Apps on your phone.
+[Shelter](https://web.archive.org/web/20201125020741/https://play.google.com/store/apps/details?id=net.typeblog.shelter){:data-originalurl="https://play.google.com/store/apps/details?id=net.typeblog.shelter" data-versiondate="2020-11-25"} is an App that enables you to use the "Work Profile" feature of phones running Android 7 "Nougat" and above (phone released after late 2016) to create isolated copies of other Apps on your phone.
 
 It is important to note that you can **NOT** run Shelter on a phone that already has a _Work Profile_ enabled (or on Samsung/OnePlus phones that are _using_ their manufacture provided solution as above).
 
@@ -130,7 +130,5 @@ Other tasks to consider also include:
 - With all the options presented above there is no ready-built ridiculously easy "off" switch for the second phone number. With both Dual SIM and SIP you need to open phone settings and disable the SIM or SIP account. That said it is perfectly possible to use e.g [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) and [plugins](https://play.google.com/store/apps/details?id=com.joaomgcd.taskersettings) to create a shortcut to do this. But I will leave that as an exercise to the reader.
 - Re-read the cons. listed for each of the options you have picked.
 
-
----
 
 [^1]: The NHS, which is also one of the [largest employers in the world](https://en.wikipedia.org/wiki/List_of_largest_employers). Though admittedly responsibility of "Work Phones" etc. is really that of the individual employing NHS organisations as "The NHS" isn't really an institution but that is a much larger footnote...

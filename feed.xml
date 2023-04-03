@@ -1,0 +1,28 @@
+--- 
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" {% if site.lang %}xml:lang="{{ site.lang }}"{% endif %}>
+  <link rel="self" href="{{ site.production_url }}{{ page.url }}" type="application/atom+xml" />
+  <link rel="alternate" href="{{ site.production_url }}/" type="text/html" />
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>{{ site.production_url }}{{ page.url }}</id>
+  <title>blu3id.uk</title>
+  {%- assign pages = site.pages | sort:"date" | reverse | where_exp: "item", "item.draft != true" | where_exp: "item", "item.unlisted != true" | where_exp: "item", "item.date" %}
+  {%- for page in pages %}
+  <entry>
+    <title>{{ page.title | markdownify | strip_html | strip_newlines | xml_escape }}</title>
+    <link rel="alternate" href="{{ site.production_url }}{{ page.url }}" type="text/html" title="{{ page.title | markdownify | strip_html | strip_newlines | xml_escape }}" />
+    <published>{{ page.date | date_to_xmlschema }}</published>
+    <updated>{{ page.last_modified_at | default: page.date | date_to_xmlschema }}</updated>
+    <id>{{ site.production_url }}{{ page.url }}</id>
+    {%- if page.tag %}
+    <category term="{{ page.tag | xml_escape }}" />
+    {%- endif %}
+    <summary>{% if page.description %}{{ page.description | strip_newlines | strip_html | truncatewords:30 | xml_escape }}{% else %}{{ page.content | replace:title,'' | markdownify | strip_html | truncatewords:30 | escape_once | xml_escape }}{% endif %}</summary>
+    <content type="html" xml:base="{{ site.production_url }}{{ page.url }}/">{{ page.content-filtered | xml_escape }}</content>
+    <author>
+      <name>@blu3id</name>
+    </author>
+  </entry>
+  {%- endfor %}
+</feed>
