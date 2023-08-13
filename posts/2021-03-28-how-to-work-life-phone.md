@@ -127,7 +127,7 @@ Other tasks to consider also include:
 
 ### Known Issues
 
-- With all the options presented above there is no ready-built ridiculously easy "off" switch for the second phone number. With both Dual SIM and SIP you need to open phone settings and disable the SIM or SIP account. That said it is perfectly possible to use e.g [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) and [plugins](https://play.google.com/store/apps/details?id=com.joaomgcd.taskersettings) to create a shortcut to do this. But I will leave that as an exercise to the reader.
+- With all the options presented above there is no ready-built ridiculously easy "off" switch for the second phone number. With both Dual SIM and SIP you need to open phone settings and disable the SIM or SIP account. That said it is perfectly possible to use e.g [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) and [plugins](https://web.archive.org/web/20201111203922/https://play.google.com/store/apps/details?id=com.joaomgcd.taskersettings){:data-originalurl="https://play.google.com/store/apps/details?id=com.joaomgcd.taskersettings" data-versiondate="2020-11-11"} to create a shortcut to do this. But I will leave that as an exercise to the reader.
 - Re-read the cons. listed for each of the options you have picked.
 
 
