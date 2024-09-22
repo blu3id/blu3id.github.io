@@ -59,7 +59,7 @@ module Jekyll
           'https://web.archive.org/web/']
         urls.each do |url|
           if url.start_with?(*stable_prefix)
-            m = url.match(%r#([1-2]\d{3}\d*)/(.*)#)
+            m = url.match(%r#([1-2]\d{3}\d*.?)/(.*)#)
             fullurl = url
             capture = m[1]
             url = m[2]

@@ -30,6 +30,16 @@ blockquote.twitter-embed {
     div.name {
       font-weight: bold;
       margin: 0;
+      img {
+        display: inline-block;
+        border-radius: 0;
+        border: none;
+        width: 1.3em;
+        height: 1.3em;
+        margin: 0 0 0 0.2em;
+        vertical-align: top;
+        padding-top: 0.1em;
+      }
     }
 
     div.handle {
@@ -77,6 +87,29 @@ blockquote.twitter-embed {
     margin: 0.5em auto;
     display: block;
     border-radius: 0.5em;
+    border: 0.05em solid var(--box-grey-background);
+  }
+
+  div.collage {
+    display: flex;
+    height: 14em;
+    margin: 0.5em auto;
+    overflow: hidden;
+    border-radius: 0.5em;
+    border: 0.05em solid var(--box-grey-background);
+
+    a.img {
+      display: flex;
+      overflow: hidden;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+
+      img {
+        max-width: unset;
+        height: 100%;
+      }
+    }
   }
 
   a {
@@ -93,6 +126,11 @@ blockquote.twitter-embed {
 
     &:after {
       display: none;
+    }
+
+    &.img {
+      position: relative;
+      z-index: 10;
     }
 
     &.reply-to {
