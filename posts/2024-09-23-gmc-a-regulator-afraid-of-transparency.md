@@ -23,7 +23,7 @@ Over the last week it has become apparent that the [General Medical Council](htt
 I initially discovered that something was wrong on Monday the 16th of September 2024 when I attempted to archive the [this](https://www.gmc-uk.org/pa-and-aa-regulation-hub/get-ready-for-regulation/revalidation){:target="_blank"} page on the GMC website providing information on the future process of revalidation for PAs and AAs and encountered the following:
 
 <figure>
-    <a href="spn-403-error.png" target="_blank"><img src="spn-403-error.png" alt="Screen capture of the Internet Archive &quot;Save Page&quot; for https://www.gmc-uk.org/pa-and-aa-regulation-hub/get-ready-for-regulation/revalidation showing a 403 (Forbidden) error received by the Archive.org crawler from the GMC website when attempting to archive it"></a>
+    <a href="gmc-a-regulator-afraid-of-transparency/spn-403-error.png" target="_blank"><img src="gmc-a-regulator-afraid-of-transparency/spn-403-error.png" alt="Screen capture of the Internet Archive &quot;Save Page&quot; for https://www.gmc-uk.org/pa-and-aa-regulation-hub/get-ready-for-regulation/revalidation showing a 403 (Forbidden) error received by the Archive.org crawler from the GMC website when attempting to archive it"></a>
     <figcaption>Screen capture of the Internet Archive "Save Page" for <a href="https://www.gmc-uk.org/pa-and-aa-regulation-hub/get-ready-for-regulation/revalidation" target="_blank">https://www.gmc-uk.org/pa-and-aa-regulation-hub/get-ready-for-regulation/revalidation</a> showing a 403 (Forbidden) error received by the Archive.org crawler from the GMC website when attempting to archive it</figcaption>
 </figure>
 
@@ -69,7 +69,7 @@ As seems to be only way to get a response from the GMC I took to Twitter to ask 
   <p>
     Hey <a href="https://twitter.com/gmcuk" target="_blank">@gmcuk</a> why are you blocking <a href="https://twitter.com/internetarchive" target="_blank">@internetarchive</a> from saving pages on your website? This seems to be fairly intentional not a &quot;configuration issue&quot;. Why don&#39;t you want a historic record of things you published to exist?
   </p>
-  <a class="img" href="spn-403-error.png" target="_blank"><img alt="Screen capture of the Internet Archive &quot;Save Page&quot; for https://web.archive.org/save/https://www.gmc-uk.org/pa-and-aa-regulation-hub/get-ready-for-regulation/revalidation showing a 403 error" src="spn-403-error.png"/></a>
+  <a class="img" href="gmc-a-regulator-afraid-of-transparency/spn-403-error.png" target="_blank"><img alt="Screen capture of the Internet Archive &quot;Save Page&quot; for https://web.archive.org/save/https://www.gmc-uk.org/pa-and-aa-regulation-hub/get-ready-for-regulation/revalidation showing a 403 error" src="gmc-a-regulator-afraid-of-transparency/spn-403-error.png"/></a>
   <a class="permalink" href="https://twitter.com/blu3id/status/1835769600811884710" target="_blank">
     <time datetime="2024-09-16T19:55:54.000Z">8:55 pm · September 16, 2024</time>
   </a>
@@ -120,14 +120,14 @@ Engaging in the discussion on Twitter surrounding my initial public question led
 This page (and the other pages in the same section on PA and AA regulation) carried an additional [meta tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta){:target="_blank"}: `<meta name="robots" content="noindex">` this extra bit of code tells internet search engines that [the page must not be indexed](https://developers.google.com/search/docs/crawling-indexing/block-indexing){:target="_blank"} and prevents it showing in search results on e.g Google.
 
 <figure>
-    <a href="pa-and-aa-revalidation-source.png" target="_blank"><img src="pa-and-aa-revalidation-source.png" alt="Screen capture of the source code for the https://www.gmc-uk.org/pa-and-aa-regulation-hub/get-ready-for-regulation/revalidation page showing the additional &lt;meta name=&quot;robots&quot; content=&quot;noindex&quot;&gt; tag"></a>
+    <a href="gmc-a-regulator-afraid-of-transparency/pa-and-aa-revalidation-source.png" target="_blank"><img src="gmc-a-regulator-afraid-of-transparency/pa-and-aa-revalidation-source.png" alt="Screen capture of the source code for the https://www.gmc-uk.org/pa-and-aa-regulation-hub/get-ready-for-regulation/revalidation page showing the additional &lt;meta name=&quot;robots&quot; content=&quot;noindex&quot;&gt; tag"></a>
     <figcaption>Screen capture of the source code for the <a href="https://www.gmc-uk.org/pa-and-aa-regulation-hub/get-ready-for-regulation/revalidation" target="_blank">https://www.gmc-uk.org/pa-and-aa-regulation-hub/get-ready-for-regulation/revalidation</a> page showing the additional <code>&lt;meta name=&quot;robots&quot; content=&quot;noindex&quot;&gt;</code> tag</figcaption>
 </figure>
 
 The concerning thing is that this extra instruction to hide pages from search results appears to be limited to pages on PAs and AAs. Looking at a similar page on revalidation but for Doctors we find the following source code that lacks the extra `meta` tag.
 
 <figure>
-    <a href="doctor-revalidation-source.png" target="_blank"><img src="doctor-revalidation-source.png" alt="Screen capture of the source code for the view-source:https://www.gmc-uk.org/registration-and-licensing/managing-your-registration/revalidation/guidance-for-doctors-requirements-for-revalidation page showing empty space were the the additional &lt;meta name=&quot;robots&quot; content=&quot;noindex&quot;&gt; tag was on the other page"></a>
+    <a href="gmc-a-regulator-afraid-of-transparency/doctor-revalidation-source.png" target="_blank"><img src="gmc-a-regulator-afraid-of-transparency/doctor-revalidation-source.png" alt="Screen capture of the source code for the view-source:https://www.gmc-uk.org/registration-and-licensing/managing-your-registration/revalidation/guidance-for-doctors-requirements-for-revalidation page showing empty space were the the additional &lt;meta name=&quot;robots&quot; content=&quot;noindex&quot;&gt; tag was on the other page"></a>
     <figcaption>Screen capture of the source code for the <a href="https://www.gmc-uk.org/registration-and-licensing/managing-your-registration/revalidation/guidance-for-doctors-requirements-for-revalidation" target="_blank">https://www.gmc-uk.org/registration-and-licensing/managing-your-registration/revalidation/guidance-for-doctors-requirements-for-revalidation</a> page showing empty space were the the additional &lt;meta name=&quot;robots&quot; content=&quot;noindex&quot;&gt; tag was on the other page</figcaption>
 </figure>
 
